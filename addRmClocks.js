@@ -36,12 +36,23 @@ var addCountDown = function() {
     driver.findElement(By.xpath("//button[@id='add']")).click();
 
 }
+
+var addStopWatch = function() {
+    driver.findElement(By.xpath("//div[@id='timer_types']/label[4]")).click();
+    driver.findElement(By.xpath("//input[@id='title']")).sendKeys('test alarm');
+    driver.findElement(By.xpath("//button[@id='add']")).click();
+}
+
+var addLapTimer = function() {
+    driver.findElement(By.xpath("//div[@id='timer_types']/label[5]")).click();
+    driver.findElement(By.xpath("//input[@id='title']")).sendKeys('test alarm');
+    driver.findElement(By.xpath("//button[@id='add']")).click();
+}
 var removeClock = function() {
     driver.findElement(By.xpath("//div[@id='timer1']/button[@class='close']")).click();
 
 }
 
 setUp()
-addAlarm()
-addCountDown()
-//removeClock()
+addLapTimer()
+removeClock()
