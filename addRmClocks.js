@@ -48,6 +48,16 @@ var addLapTimer = function() {
     driver.findElement(By.xpath("//input[@id='title']")).sendKeys('test alarm');
     driver.findElement(By.xpath("//button[@id='add']")).click();
 }
+
+var lapTwice = function() {
+    driver.findElement(By.xpath("//button[@onclick='startLapTimerOnClick(timer1);']")).click();
+    driver.sleep(3000);
+    driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
+    driver.sleep(3000);
+    driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
+    driver.sleep(2000);
+    driver.findElement(By.xpath("//button[@onclick='stopLapTimerOnClick(timer1);']")).click();
+}
 var removeClock = function() {
     driver.findElement(By.xpath("//div[@id='timer1']/button[@class='close']")).click();
 
@@ -55,4 +65,6 @@ var removeClock = function() {
 
 setUp()
 addLapTimer()
+lapTwice();
 removeClock()
+driver.close();
