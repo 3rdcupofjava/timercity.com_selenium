@@ -48,16 +48,6 @@ exports.addTimer = function(type) {
 
 }
 
-
-var lapTwice = function() {
-    this.driver.findElement(By.xpath("//button[@onclick='startLapTimerOnClick(timer1);']")).click();
-    this.driver.sleep(3000);
-    this.driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
-    this.driver.sleep(3000);
-    this.driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
-    this.driver.sleep(2000);
-    this.driver.findElement(By.xpath("//button[@onclick='stopLapTimerOnClick(timer1);']")).click();
-}
 exports.removeTimer = function() {
     this.driver.findElement(By.xpath("//div[@id='timer1']/button[@class='close']")).click();
 
