@@ -3,8 +3,6 @@
  */
 
 var By = require('selenium-webdriver').By
-    require('chai').should()
-    require('webdriverjs-helper');
     until =  require('selenium-webdriver').until,
     chrome = require('selenium-webdriver/chrome');
 
