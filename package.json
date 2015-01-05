@@ -5,11 +5,14 @@
   "description":"selenium-webdriver tests",
   "author":"Srihari Rao",
   "scripts": {
-    "start": "node tests.js"
+    "test": "node tests.js"
+
   },
   "dependencies": {
     "async":"*",
     "selenium-webdriver":"*",
+    "webdriverjs-helper":"*",
+    "chai":"*",
     "fs":"*"
 
   }
