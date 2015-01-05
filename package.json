@@ -1,0 +1,16 @@
+{
+  "name": "timerCity",
+  "version": "0.0.1",
+  "private": true,
+  "description":"selenium-webdriver tests",
+  "author":"Srihari Rao",
+  "scripts": {
+    "start": "node tests.js"
+  },
+  "dependencies": {
+    "async":"*",
+    "selenium-webdriver":"*",
+    "fs":"*"
+
+  }
+}

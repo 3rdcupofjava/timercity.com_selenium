@@ -2,7 +2,7 @@
  * Created by kinghenry on 12/24/14.
  */
 
-var By = require('selenium-webdriver').By,
+var By = require('selenium-webdriver').By
     until =  require('selenium-webdriver').until,
     chrome = require('selenium-webdriver/chrome');
 
@@ -48,6 +48,29 @@ exports.addTimer = function(type) {
 
 }
 
+exports.worldTab = function() {
+    this.driver.findElement(By.xpath("//a[@href='#worldClockTab']")).click();
+}
+
+exports.homeTab = function() {
+    this.driver.findElement(By.xpath("//a[@href='#home']")).click();
+}
+
+exports.alarmTab = function(){
+    this.driver.findElement(By.xpath("//a[@href='#alarmClockTab']")).click();
+}
+
+exports.countDownTab = function() {
+    this.driver.findElement(By.xpath("//a[@href='#countDownTab']")).click();
+}
+
+exports.stopWatchTab = function() {
+    this.driver.findElement(By.xpath("//a[@href='#stopWatchTab']")).click();
+}
+
+exports.lapTimeTab = function() {
+    this.driver.findElement(By.xpath("//a[@href='#lapTimeTab']")).click();
+}
 exports.removeTimer = function() {
     this.driver.findElement(By.xpath("//div[@id='timer1']/button[@class='close']")).click();
 

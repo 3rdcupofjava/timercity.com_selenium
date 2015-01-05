@@ -10,19 +10,39 @@ var By = require('selenium-webdriver').By,
 
 
 var lapTwice = function() {
-    clocks.setUp()
     clocks.addTimer("lap timer")
     clocks.driver.sleep(3000);
-    clocks.driver.findElement(By.xpath("//button[@onclick='startLapTimerOnClick(timer1);']")).click();
+    clocks.driver.findElement(By.xpath("//button[text()=' Start']")).click();
     clocks.driver.sleep(3000);
-    clocks.driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
+    clocks.driver.findElement(By.xpath("//button[text()=' Lap']")).click();
     clocks.driver.sleep(3000);
-    clocks.driver.findElement(By.xpath("//button[@onclick='splitTimerOnClick(timer1);']")).click();
+    clocks.driver.findElement(By.xpath("//button[text()=' Lap']")).click();
     clocks.driver.sleep(2000);
-    clocks.driver.findElement(By.xpath("//button[@onclick='stopLapTimerOnClick(timer1);']")).click();
+    clocks.driver.findElement(By.xpath("//button[text()=' Stop']")).click();
     clocks.driver.sleep(2000);
-    clocks.removeTimer();
+
+}
+
+var tabClocks = function() {
+    clocks.setUp()
+    clocks.alarmTab();
+    clocks.driver.sleep(3000);
+    clocks.addTimer("alarm");
+    clocks.driver.sleep(3000);
+    clocks.countDownTab();
+    clocks.driver.sleep(3000);
+    clocks.addTimer("countdown");
+    clocks.driver.sleep(3000);
+    clocks.lapTimeTab();
+    clocks.driver.sleep(3000);
+    lapTwice();
+    clocks.alarmTab();
+    clocks.driver.sleep(3000);
+    clocks.countDownTab();
+    clocks.driver.sleep(3000);
+    clocks.lapTimeTab()
+    clocks.driver.sleep(5000);
     clocks.driver.close();
 }
 
-lapTwice()
+tabClocks()
