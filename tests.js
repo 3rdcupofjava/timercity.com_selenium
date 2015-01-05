@@ -2,7 +2,7 @@
  * Created by kinghenry on 12/30/14.
  */
 
-var clocks = require('./addRmClocks.js');
+var clocks = require('./directives.js');
 
 var By = require('selenium-webdriver').By,
     until =  require('selenium-webdriver').until,
@@ -45,4 +45,29 @@ var tabClocks = function() {
     clocks.driver.close();
 }
 
-tabClocks()
+var buttons = function (){
+    clocks.setUp();
+    clocks.saveBtn();
+    clocks.driver.sleep(3000);
+    clocks.driver.back();
+    clocks.aboutBtn()
+    clocks.driver.sleep(3000);
+    clocks.driver.back();
+    clocks.driver.sleep(4000);
+    clocks.saveRightBtn();
+    clocks.driver.sleep(3000);
+    clocks.brandLink();
+    clocks.driver.sleep(3000);
+    clocks.loadBtn();
+    clocks.driver.sleep(3000);
+    clocks.loadInput("hello")
+    clocks.driver.sleep(3000);
+    clocks.brandLink();
+    clocks.driver.sleep(3000);
+    clocks.loginBtn();
+    clocks.driver.sleep(3000);
+    clocks.driver.close();
+}
+
+buttons();
+//tabClocks();
