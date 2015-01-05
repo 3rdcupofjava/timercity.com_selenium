@@ -3,6 +3,8 @@
  */
 
 var By = require('selenium-webdriver').By
+    require('chai').should()
+    require('webdriverjs-helper');
     until =  require('selenium-webdriver').until,
     chrome = require('selenium-webdriver/chrome');
 
@@ -71,6 +73,44 @@ exports.stopWatchTab = function() {
 exports.lapTimeTab = function() {
     this.driver.findElement(By.xpath("//a[@href='#lapTimeTab']")).click();
 }
+
+exports.saveBtn = function() {
+    this.driver.findElement(By.xpath("//a[@href='/albums']")).click();
+}
+
+exports.aboutBtn = function() {
+    this.driver.findElement(By.xpath("//a[@href='/about']")).click();
+}
+
+exports.saveRightBtn = function(){
+    this.driver.findElement(By.xpath("//a[@id='save']")).click();
+}
+
+exports.loadBtn = function() {
+    this.driver.findElement(By.xpath("//a[@id='load']")).click();
+}
+
+exports.loginBtn = function() {
+    this.driver.findElement(By.xpath("//a[text()='Log In']")).click();
+}
+
+exports.loadInput = function(inputString){
+    this.driver.findElement(By.xpath("//input[@id='storage_key_load']")).sendKeys(inputString);
+    this.driver.sleep(2000);
+}
+
+exports.localBtn = function(){
+    this.driver.findElement(By.xpath("//button[@id='load_local']")).click();
+}
+
+exports.globalBtn = function(){
+    this.driver.findElement(By.xpath("//button[@id='load_global']")).click();
+}
+
+exports.brandLink = function(){
+    this.driver.findElement(By.xpath("//a[@href='/']")).click();
+}
+
 exports.removeTimer = function() {
     this.driver.findElement(By.xpath("//div[@id='timer1']/button[@class='close']")).click();
 
