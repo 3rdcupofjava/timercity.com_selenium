@@ -11,7 +11,7 @@
   "dependencies": {
     "async":"*",
     "selenium-webdriver":"*",
-    "webdriver-helper":"*",
+    "webdriverjs-helper":"*",
     "chai":"*",
     "fs":"*"
 
